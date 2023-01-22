@@ -3,6 +3,9 @@ using System.Diagnostics.Tracing;
 
 namespace Envelope.Metrics;
 
+#if NET6_0_OR_GREATER
+[Envelope.Serializer.JsonPolymorphicConverter]
+#endif
 public interface IEventListener
 {
 	public string EventSourceName { get; }
